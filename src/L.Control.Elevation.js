@@ -449,7 +449,7 @@ L.Control.Elevation = L.Control.extend({
  },
 
  updateData: function(d) {
-   this.removeData();
+   if (this._data) this.removeData();
    this.addData(d);
  }
 
