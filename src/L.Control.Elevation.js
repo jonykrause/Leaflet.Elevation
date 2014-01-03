@@ -59,7 +59,7 @@ L.Control.Elevation = L.Control.extend({
     });
 
     var container = this._container = L.DomUtil.create("div", "elevation");
-    
+
     this._initToggle();
 
     var complWidth = opts.width + margin.left + margin.right;
@@ -440,7 +440,18 @@ L.Control.Elevation = L.Control.extend({
       .attr("d", this._area);
     this._updateAxis();
     return;
-  }
+  },
+
+ removeData: function() {
+   this._data.length = 0;
+   this._dist = null;
+   this._maxElevation = null;
+ },
+
+ updateData: function(d) {
+   this.removeData();
+   this.addData(d);
+ }
 
 });
 
