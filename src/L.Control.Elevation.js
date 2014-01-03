@@ -39,8 +39,8 @@ L.Control.Elevation = L.Control.extend({
     opts.yTicks = opts.yTicks || Math.round(opts.height / 30);
     opts.hoverNumber.formatter = opts.hoverNumber.formatter || this._formatter;
 
-    //append theme name on body
-    d3.select("body").classed(opts.theme, true);
+    //append theme name on map container
+    L.DomUtil.addClass(this._map._container, opts.theme);
 
     var x = this._x = d3.scale.linear()
       .range([0, opts.width]);
